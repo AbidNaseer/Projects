@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen flex flex-col bg-cream-100" style="background-color: #FFF7ED;">
+    <header class="bg-purple-700 text-cream-100 p-4 shadow-md" style="color: #FFF7ED;">
+        <h1 class="text-2xl font-bold text-center">Weather App</h1>
+    </header>
+    <div id="container" class="flex-1 flex items-center justify-center p-4">
+        <div id="input-container" class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+            <h2 class="text-xl font-semibold mb-4 text-purple-700"> Weather App</h2>
+            <input 
+                type="text" 
+                id="city-input" 
+                placeholder="Enter city name" 
+                class="border border-purple-300 rounded p-2 w-full mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400 bg-cream-50"
+                style="background-color: #FFF7ED;"
+            >
+            <button 
+                id="get-weather-btn" 
+                class="bg-purple-600 hover:bg-purple-700 text-cream-100 rounded p-2 w-full font-semibold transition"
+                style="color: #FFF7ED;"
+            >
+                Get Weather
+            </button>
+            <div id="weather-result" class="hidden">
+                <h2 id="city-name"></h2>
+                <p id="temprature"></p>
+                <p id="description"></p>
+
+            </div>
+          <p id="error-message" class="hidden"></p>  
+        </div>
+    </div>
+    <footer class="bg-purple-700 text-cream-100 text-center p-4" style="color: #FFF7ED;">
+        <p>&copy; 2025 Weather App</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

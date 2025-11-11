@@ -1,0 +1,169 @@
+/* --- Global Styles & Base Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px; /* Vertical and horizontal padding */
+    min-height: 100vh;
+}
+
+#container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px; /* Standard maximum width for the app */
+}
+
+/* --- Header Styling --- */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2.2em;
+    border-bottom: 3px solid #007bff; /* Primary blue accent */
+    padding-bottom: 10px;
+}
+
+/* --- Input Area Styling (Default: Row) --- */
+#input-container {
+    display: flex;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+#todo-input {
+    flex-grow: 1; /* Input takes up available space */
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+#todo-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#add-task-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+#add-task-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Todo List Item Styling --- */
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+#todo-list li {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    color: #495057;
+    border: 1px solid #e9ecef;
+    border-left: 5px solid transparent; /* Space for accent border */
+    transition: all 0.3s;
+}
+
+/* Completed Task State (Use JavaScript to add/remove this class) */
+.completed {
+    background-color: #d4edda !important; /* Light green background */
+    color: #155724 !important;
+    text-decoration: line-through;
+    opacity: 0.7;
+    border-left: 5px solid #28a745 !important; /* Green accent */
+}
+
+/* Delete Button Styling */
+#todo-list li button {
+    background-color: #dc3545; /* Red delete color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+#todo-list li button:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 500px) {
+    /* Adjust container padding for very small screens */
+    body {
+        padding: 30px 10px;
+    }
+
+    #container {
+        padding: 20px 15px;
+    }
+
+    /* Stack the input and button vertically */
+    #input-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Make the button full width */
+    #add-task-button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Allow the list item content to wrap */
+    #todo-list li {
+        flex-wrap: wrap;
+        align-items: flex-start; /* Align items to the top when wrapped */
+        font-size: 1em;
+    }
+
+    /* Ensure the task text occupies the full width first */
+    #todo-list li {
+        flex-basis: 100%;
+        margin-bottom: 0; /* Remove gap between text and button */
+        padding-bottom: 5px; /* Add small padding below text */
+        order: 1; /* Place text first */
+    }
+
+    /* Place the delete button on its own line */
+    #todo-list li button {
+        order: 2; /* Place button second */
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 0;
+        font-size: 0.9em;
+    }
+}

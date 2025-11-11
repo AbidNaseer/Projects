@@ -1,0 +1,24 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A simple weather application that fetches weather data from an API and displays it.",
+  "main": "src/script.js",
+  "scripts": {
+    "build": "tailwindcss build src/styles.css -o dist/styles.css",
+    "watch": "tailwindcss build src/styles.css -o dist/styles.css --watch"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5"
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "tailwindcss"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
